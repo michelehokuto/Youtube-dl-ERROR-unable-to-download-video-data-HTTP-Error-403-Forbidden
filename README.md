@@ -10,3 +10,5 @@ I publish two scripts, the first called BASH1 only has the logic to retry the do
 of course you have to install youtube-dl before using the script.
 
 have fun and I recommend what you download!
+
+PS: if some words are wrong it is because I am not English
