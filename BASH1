@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "DATE $(date) WELCOME $USER ------------------------------------"
+		echo "THE VIDEO IS DOWNLOADING!!"
+		while true
+		do
+		if youtube-dl --output '/your/path/%(upload_date)s-%(title)s.%(ext)s' https://www.youtube.com/your_link --playlist-start 1 --restrict-filenames
+		then
+				echo "VIDEO DOWNLOADED SUCCESSFULLY, GOODBYE $USER -----------"
+				exit 1
+			else
+				echo "RETRY TO DOWNLOAD THE VIDEO -----------"
+		fi
+		done
+

@@ -1,0 +1,44 @@
+#!/bin/sh
+echo "DATE $(date) WELCOME $USER ------------------------------------"
+echo "WRITE THE PATH IN WHICH TO SAVE THE DOWNLOADED VIDEO (S):"
+read percorso
+echo "TYPE THE LINK OF THE VIDEO OR THE PLAYLIST:"
+read link_video
+echo "OK! YOU TYPED: $link_video"
+while true
+do
+echo "YOUR VIDEO OR PLAYLIST IS ABOUT TO BE DOWNLOADED, ARE YOU SURE YOU WANT TO CONTINUE? (yes/no)"
+si_var="yes"
+read risposta
+
+if test $risposta = $si_var
+	then
+		echo "THE VIDEO IS DOWNLOADING!!"
+		while true
+		do
+		if youtube-dl -o '$percorso%(upload_date)s-%(title)s.%(ext)s' $link_video --playlist-items 1 --restrict-filenames
+		#if youtube-dl --output '/home/michele/Documenti/PROVE_GENERALI/%(upload_date)s-%(title)s.%(ext)s' https://m.youtube.com/c/FreeGNULinux/videos --playlist-items 40 --restrict-filenames
+		then
+				echo "VIDEO DOWNLOADED SUCCESSFULLY, GOODBYE $USER -----------"
+				exit 1
+			else
+				echo "RETRY TO DOWNLOAD THE VIDEO -----------"
+		fi
+		done
+	else
+		echo "DO YOU WANT TO REWRITE THE VIDEO LINK? (yes/no)"
+		read risposta2
+		si_var2="yes"
+
+
+		if test $risposta2 = $si_var2
+		then
+			echo "TYPE THE LINK OF THE VIDEO OR THE PLAYLIST:"
+			read link_video
+			echo "OK! YOU TYPED: $link_video"
+		else
+			echo "GOODBYE $USER"
+			exit 0
+		fi
+fi
+done
