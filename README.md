@@ -8,7 +8,9 @@ the goal therefore is to prevent youtube-dl from failing. So I created a script 
 I publish two scripts, the first called BASH1 only has the logic to retry the download. The second, BASH2, also has the logic to insert the link, but as mentioned above, it needs to be fixed.
 
 of course you have to install youtube-dl before using the script.
+to run the script you will need to change the execution permissions: chmod ugo+x file_name
+in order to download your playlist you need to change the link in the script. If you want you can add other youtube-dl options.
 
 have fun and I recommend what you download!
 
-PS: if some words are wrong it is because I am not English
+NOTE: SOME VARIABLES ARE IN ITALIAN LANGUAGES. SOME ENGLISH WORDS MAY BE WRONG. hope it can be clear
