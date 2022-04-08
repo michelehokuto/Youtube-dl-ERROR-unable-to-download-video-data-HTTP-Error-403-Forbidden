@@ -1,4 +1,4 @@
-# youtube-dl-and-BASH-Linux
+# auto retry download after youtube-dl failure. BASH LINUX
 
 the reason this bash script was created is because youtube-dl, while downloading long-sized videos, fails and thus stops downloading the video or videos when you least expect it. The error is as follows (I have tried with various versions and it has the same problem):  
 ERROR: unable to download video data: HTTP Error 403: Forbidden.
